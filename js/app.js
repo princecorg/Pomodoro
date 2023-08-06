@@ -24,6 +24,7 @@ window.onload = () => {
 }
 
 // start timer
+
 function start () {
   // change button
   document.getElementById('start').style.display = 'none'
