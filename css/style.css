@@ -17,7 +17,8 @@ html,
 body {
   background-color: var(--color-primary);
   font-size: 1.25rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
 }
 
 p,
@@ -26,12 +27,9 @@ h1 {
   color: var(--color-font);
 }
 
-i {
-  font-size: 3.2rem;
-}
-
+i,
 h1 {
-  font-size: 6.5vw;
+  font-size: 6vw;
 }
 
 /* ==== CONTENT ==== */
@@ -39,13 +37,11 @@ h1 {
 section {
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
 .container {
   width: 100%;
-  margin-inline: auto;
-  padding-inline: 2rem;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +54,7 @@ section {
   text-align: center;
   width: min(80vw, 420px);
   margin-block: 5rem;
-  padding: 1rem;
+  padding: 8px;
   border-radius: 10rem;
   -webkit-box-shadow: 0px 0px 15px 10px var(--color-shadow);
   box-shadow: 0px 0px 15px 10px var(--color-shadow);
@@ -92,17 +88,8 @@ section {
   width: min(74vw, 420px);
   height: min(74vw, 420px);
   border-radius: 50%;
-  background-color: var(--color-secondary);
-  position: relative;
-}
-
-.circle::before {
-  content: "";
-  position: absolute;
-  width: 95%;
-  height: 95%;
-  border-radius: 50%;
   background-color: var(--color-primary);
+  border: 5px solid var(--color-secondary);
 }
 
 .time {
@@ -134,5 +121,5 @@ section {
   display: none;
 }
 button {
-  color: red;
+  color: var(--color-primary);
 }
