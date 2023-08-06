@@ -21,12 +21,12 @@ body {
 }
 
 p,
-i,
+em,
 h1 {
   color: var(--color-font);
 }
 
-i,
+em,
 h1 {
   font-size: 6vw;
 }
