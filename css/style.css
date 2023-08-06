@@ -5,6 +5,7 @@
   --color-secondary: #c8e8b5;
   --color-font: #eaf1f2;
   --color-shadow: #70130e;
+  --footer: #110201;
 }
 
 * {
@@ -13,58 +14,61 @@
   box-sizing: border-box;
 }
 
-html,
 body {
-  background-color: var(--color-primary);
+  /* height: 100vh; */
+  text-align: center;
+  /* margin: auto; */
   font-size: 1.25rem;
   font-family: 'Roboto', sans-serif;
 }
 
+.container {
+  margin: auto;
+  max-width: 1600px;
+  width: 80%;
+  background-color: var(--color-primary);
+}
+
 p,
-em,
 h1 {
   color: var(--color-font);
 }
 
-em,
 h1 {
-  font-size: 6vw;
+  font-size: 6rem;
 }
 
 /* ==== CONTENT ==== */
 
-section {
-  display: flex;
-  align-items: center;
-}
-
-.container {
+header {
   width: 100%;
   padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
-.painel {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.panel,
+.circle,
+.timer {
+  margin: 50px auto;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
-  width: min(70vw, 400px);
-  margin-block: 5rem;
-  padding: 8px;
-  border-radius: 10rem;
+  width: 25%;
+  padding: 25px;
+  border-radius: 25px;
   -webkit-box-shadow: 0px 0px 15px 10px var(--color-shadow);
   box-shadow: 0px 0px 15px 10px var(--color-shadow);
 }
 
-.painel p {
+.panel p {
   opacity: 0.8;
   transition: 1s ease-in;
+  font-size: 2rem;
 }
 
-.painel p.active {
+.panel p.active {
   opacity: 1;
   color: var(--color-secondary);
 }
@@ -73,8 +77,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: min(70vw, 400px);
-  height: min(70vw, 400px);
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
   -webkit-box-shadow: 0px 0px 15px 10px var(--color-shadow);
   box-shadow: 0px 0px 15px 10px var(--color-shadow);
@@ -84,11 +88,11 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: min(68vw, 380px);
-  height: min(68vw, 380px);
+  width: 520px;
+  height: 520px;
   border-radius: 50%;
   background-color: var(--color-primary);
-  border: 5px solid var(--color-secondary);
+  border: 15px solid var(--color-secondary);
 }
 
 .time {
@@ -97,7 +101,7 @@ section {
 }
 
 .time p {
-  font-size: 4.5rem;
+  font-size: 8rem;
 }
 
 .time p:nth-of-type(2) {
@@ -107,11 +111,11 @@ section {
 }
 
 .controls {
-  margin-top: 2rem;
+  padding: 2rem;
 }
 
 .controls button {
-  border: none;
+  border: 5px solid var(--color-font);
   background-color: transparent;
   cursor: pointer;
 }
@@ -120,5 +124,56 @@ section {
   display: none;
 }
 button {
-  color: var(--color-primary);
+  margin: auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  color: var(--color-font);
+  padding: 10px;
+  font-size: 3rem;
+}
+
+footer {
+  width: 100%;
+  padding: 50px 10px;
+  background-color: var(--footer);
+  color: var(--color-font);
+}
+
+/* -------------------- MEDIA QUERIES ----------------------------- */
+
+@media screen and (max-width: 1024px) {
+  .panel {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container,
+  .panel {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .panel {
+    font-size: 1.5 rem;
+  }
+
+  .circle {
+    width: 250px;
+    height: 250px;
+    border: 5px solid var(--color-secondary);
+  }
+
+  .timer {
+    width: 265px;
+    height: 265px;
+  }
+
+  .time p {
+    font-size: 4rem;
+  }
 }
